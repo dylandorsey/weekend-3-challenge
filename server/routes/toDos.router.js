@@ -36,18 +36,18 @@ router.post('/', (req, res) => {
         });
 });
 
-// router.delete('/', (req, res) => {
-//     console.log('about to try to remove something');
-//     // router.put uses req.body
-//     Tasks.findByIdAndRemove(req.query._id)
-//         .then((response) => {
-//             res.send(202);
-//         })
-//         .catch((error) => {
-//             console.log('error with remove from database', error);
-//             res.sendStatus(500);
-//         });
-// });
+router.delete('/', (req, res) => {
+    console.log('about to try to remove something');
+    // router.put uses req.body
+    Tasks.findByIdAndRemove(req.query._id)
+        .then((response) => {
+            res.send(202);
+        })
+        .catch((error) => {
+            console.log('error with remove from database', error);
+            res.sendStatus(500);
+        });
+});
 
 // router.put('/', (req, res) => {
 //     console.log('put it now please!');

@@ -63,8 +63,20 @@ app.controller('ToDoController', ['$http', function ($http) {
         console.log('In markComplete');
     }
 
-    self.delete = function () {
+    self.delete = function (toDo) {
         console.log('In delete');
+        $http({
+            method: 'DELETE',
+            url:'toDos',
+            params: toDo
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function(error) {
+            console.log('error on /toDos POST', error);
+        });
+       getToDos();
     }
 
 }
