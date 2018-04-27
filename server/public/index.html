@@ -14,7 +14,7 @@
 <body ng-app="ToDoApp" ng-controller="ToDoController as vm">
     <h1>Add a ToDo</h1>
     <input ng-model="vm.newToDo.toDoText" placeholder="new todo text">
-    <button ng-click="vm.createToDo()">Create new</button>
+    <button ng-click="vm.createToDo(newToDo)">Create new</button>
     <h2>ToDo List</h2>
     <section ng-repeat="toDo in vm.toDoList">
         <input ng-model="toDo.toDoText">

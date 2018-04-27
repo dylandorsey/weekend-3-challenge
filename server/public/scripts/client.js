@@ -1,4 +1,4 @@
-console.log( 'in client.js');
+console.log('in client.js');
 
 var app = angular.module('ToDoApp', []);
 
@@ -20,21 +20,24 @@ app.controller('ToDoController', ['$http', function ($http) {
         }
     ]
 
-self.createToDo = function () {
-    console.log('In createToDo');
-}
+    self.newToDo = {};
 
-self.updateText = function () {
-    console.log('In updateText');
-}
+    self.createToDo = function (newToDo) {
+        console.log('In createToDo');
+        self.toDoList.push(angular.copy(self.newToDo));
+    }
 
-self.markComplete = function () {
-    console.log('In markComplete');
-}
+    self.updateText = function () {
+        console.log('In updateText');
+    }
 
-self.delete = function () {
-    console.log('In delete');
-}
+    self.markComplete = function () {
+        console.log('In markComplete');
+    }
+
+    self.delete = function () {
+        console.log('In delete');
+    }
 
 }
 ])

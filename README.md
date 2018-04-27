@@ -12,8 +12,8 @@ This weekend is all about showing us that you have a handle on each of the diffe
 Here are the specific components for the challenge:
 
 [x] set up debugger in code
-* [ ] Using AngularJS, create a front end experience that allows a user to create a task.
-[ ] create input field for task
+* [x] Using AngularJS, create a front end experience that allows a user to create a task.
+[x] create input field for task
 [x] create button to mark complete
 [x] create button to delete
 [x] create button to save modifications
