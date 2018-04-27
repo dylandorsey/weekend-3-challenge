@@ -21,7 +21,7 @@
         <input ng-model="toDo.toDoText">
         <input disabled="disabled" ng-model="toDo.isComplete">
         <button ng-click="vm.updateText(toDo)">update text</button>
-        <button ng-click="vm.markComplete(toDo)">mark complete</button>
+        <button ng-click="vm.toggleComplete(toDo)">toggle complete</button>
         <button ng-click="vm.delete(toDo)">delete</button>
     </section>
 </body>
