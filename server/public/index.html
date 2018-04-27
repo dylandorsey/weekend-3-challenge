@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,17 @@
     <script src="scripts/client.js"></script>
 </head>
 <h1>Mean Todo >:D</h1>
-<body>
-    
+
+<body ng-app="ToDoApp" ng-controller="ToDoController as vm">
+    <h1>Add a ToDo</h1>
+    <input ng-model="vm.newToDo.toDoText" placeholder="new todo text">
+    <button ng-click="vm.createToDo()">Create new</button>
+    <h2>ToDo List</h2>
+    <section ng-repeat="toDo in vm.toDoList">
+        <input ng-model="toDo.toDoText">
+        <button ng-click="vm.updateText()">update text</button>
+        <button ng-click="vm.markComplete()">mark complete</button>
+        <button ng-click="vm.delete()">delete</button>
+    </section>
 </body>
 </html>

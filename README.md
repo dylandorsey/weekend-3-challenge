@@ -14,10 +14,10 @@ Here are the specific components for the challenge:
 [x] set up debugger in code
 * [ ] Using AngularJS, create a front end experience that allows a user to create a task.
 [ ] create input field for task
-[ ] create button to mark complete
-[ ] create button to delete
-[ ] create button to save modifications
-[ ] assign ng-repeat="toDo in vm.toDo"
+[x] create button to mark complete
+[x] create button to delete
+[x] create button to save modifications
+[x] assign ng-repeat="toDo in vm.toDo"
 * [ ] When the task is created, it should be stored inside of a database (MongoDB)
 CLIENT.JS
 [ ] getFunction includes $http POST
