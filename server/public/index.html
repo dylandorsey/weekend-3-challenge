@@ -17,9 +17,11 @@
     <button ng-click="vm.createToDo(newToDo)">Create new</button>
     <h2>ToDo List</h2>
     <section ng-repeat="toDo in vm.toDoList">
+        <label for=""></label>
         <input ng-model="toDo.toDoText">
+        <input disabled="disabled" ng-model="toDo.isComplete">
         <button ng-click="vm.updateText(toDo)">update text</button>
-        <button ng-click="vm.markComplete()">mark complete</button>
+        <button ng-click="vm.markComplete(toDo)">mark complete</button>
         <button ng-click="vm.delete(toDo)">delete</button>
     </section>
 </body>

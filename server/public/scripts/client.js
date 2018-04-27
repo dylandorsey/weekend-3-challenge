@@ -43,53 +43,59 @@ app.controller('ToDoController', ['$http', function ($http) {
         console.log('In createToDo');
         $http({
             method: 'POST',
-            url:'toDos',
+            url: 'toDos',
             data: self.newToDo
         })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function(error) {
-            console.log('error on /toDos POST', error);
-        });
-       getToDos();
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log('error on /toDos POST', error);
+            });
+        getToDos();
     }
 
     self.updateText = function (toDo) {
         console.log('In updateText');
-        $http({
-            method: 'PUT',
-            url:'toDos',
-            data: toDo
-        })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function(error) {
-            console.log('error on /toDos POST', error);
-        });
-       getToDos();
+        putRequest(toDo);
+        getToDos();
     }
 
-    self.markComplete = function () {
+    self.markComplete = function (toDo) {
         console.log('In markComplete');
+        toDo.isComplete = true;
+        putRequest(toDo);
+        getToDos();
     }
 
     self.delete = function (toDo) {
         console.log('In delete');
         $http({
             method: 'DELETE',
-            url:'toDos',
+            url: 'toDos',
             params: toDo
         })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function(error) {
-            console.log('error on /toDos POST', error);
-        });
-       getToDos();
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log('error on /toDos POST', error);
+            });
+        getToDos();
     }
 
+    function putRequest(toDo) {
+        $http({
+            method: 'PUT',
+            url: 'toDos',
+            data: toDo
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log('error on /toDos POST', error);
+            });
+    }
 }
 ])
