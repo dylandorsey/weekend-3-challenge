@@ -18,7 +18,7 @@
     <h2>ToDo List</h2>
     <section ng-repeat="toDo in vm.toDoList">
         <input ng-model="toDo.toDoText">
-        <button ng-click="vm.updateText()">update text</button>
+        <button ng-click="vm.updateText(toDo)">update text</button>
         <button ng-click="vm.markComplete()">mark complete</button>
         <button ng-click="vm.delete(toDo)">delete</button>
     </section>

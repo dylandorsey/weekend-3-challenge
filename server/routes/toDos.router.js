@@ -49,17 +49,17 @@ router.delete('/', (req, res) => {
         });
 });
 
-// router.put('/', (req, res) => {
-//     console.log('put it now please!');
-//     // router.put uses req.body
-//     Tasks.findByIdAndUpdate(req.body._id, req.body)
-//         .then((response) => {
-//             res.send(202);
-//         })
-//         .catch((error) => {
-//             console.log('database returns error with put:', error);
-//             res.sendStatus(500);
-//         });
-// });
+router.put('/', (req, res) => {
+    console.log('put it now please!');
+    // router.put uses req.body
+    Tasks.findByIdAndUpdate(req.body._id, req.body)
+        .then((response) => {
+            res.send(202);
+        })
+        .catch((error) => {
+            console.log('database returns error with put:', error);
+            res.sendStatus(500);
+        });
+});
 
 module.exports = router;

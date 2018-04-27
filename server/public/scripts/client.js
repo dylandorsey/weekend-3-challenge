@@ -55,8 +55,20 @@ app.controller('ToDoController', ['$http', function ($http) {
        getToDos();
     }
 
-    self.updateText = function () {
+    self.updateText = function (toDo) {
         console.log('In updateText');
+        $http({
+            method: 'PUT',
+            url:'toDos',
+            data: toDo
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function(error) {
+            console.log('error on /toDos POST', error);
+        });
+       getToDos();
     }
 
     self.markComplete = function () {
