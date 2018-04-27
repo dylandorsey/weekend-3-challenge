@@ -7,7 +7,9 @@ app.controller('ToDoController', ['$http', function ($http) {
 
     var self = this;
 
-    // self.newToDo = getToDos();
+    self.newToDo = getToDos();
+
+    getToDos();
 
     self.toDoList = [
         {
@@ -22,9 +24,35 @@ app.controller('ToDoController', ['$http', function ($http) {
 
     self.newToDo = {};
 
-    self.createToDo = function (newToDo) {
+    function getToDos() {
+        $http({
+            method: 'GET',
+            url: '/toDos'
+        })
+            .then(function (response) {
+                console.log(response.data);
+                self.toDoList = response.data;
+            })
+            .catch(function (error) {
+                console.log('error on /toDos GET', error);
+            })
+    }
+
+
+    self.createToDo = function () {
         console.log('In createToDo');
-        self.toDoList.push(angular.copy(self.newToDo));
+        $http({
+            method: 'POST',
+            url:'toDos',
+            data: self.newToDo
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function(error) {
+            console.log('error on /toDos POST', error);
+        });
+       getToDos();
     }
 
     self.updateText = function () {

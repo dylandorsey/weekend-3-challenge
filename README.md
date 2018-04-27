@@ -20,7 +20,8 @@ Here are the specific components for the challenge:
 [x] assign ng-repeat="toDo in vm.toDo"
 * [ ] When the task is created, it should be stored inside of a database (MongoDB)
 CLIENT.JS
-[ ] getFunction includes $http POST
+[ ] getFunction is $http GET
+[ ] postFunction is $http POST
 SERVER.JS
 [ ] create server.js and get it listening
 [ ] set up
@@ -35,7 +36,7 @@ const toDoSchema = new Schema ({
 })
 * [ ] Whenever a task is created the front end should refresh to show all tasks that need to be completed.
 CLIENT.JS
-[ ] postFunction includes: $hhtp POST, getFunction
+[ ] postFunction includes: getFunction
 * [ ] Each task should have an option to 'Complete' or 'Delete'.
 CLIENT.JS
 [ ] editFunction includes: $http PUT, getFunction
