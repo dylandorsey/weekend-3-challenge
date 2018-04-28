@@ -22,7 +22,7 @@
     <p>Filter list by category: </p>
     <input type="text" ng-model="searchBar" placeholder="Filter by category">
     <p>ToDo List:</p>
-    <section ng-repeat="toDo in vm.toDoList | filter:{category: searchBar}">
+    <section ng-repeat="toDo in vm.toDoList | filter:{category: searchBar} | orderBy:'isComplete'">
         <input ng-model="toDo.toDoText">
         <input ng-model="toDo.category">
         <input disabled="disabled" ng-model="toDo.isComplete">
