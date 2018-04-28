@@ -64,13 +64,13 @@ app.controller('ToDoController', ['$http', function ($http) {
     self.toggleComplete = function (toDo) {
         console.log('In toggleComplete');
         console.log(toDo.isComplete);
-        if (toDo.isComplete === true) {
-            toDo.isComplete = false;
+        if (toDo.isComplete != true) {
+            toDo.isComplete = true;
             putRequest(toDo);
             console.log(toDo.isComplete);
         }
-        else if (toDo.isComplete === false) {
-            toDo.isComplete = true;
+        else if (toDo.isComplete === true) {
+            toDo.isComplete = false;
             putRequest(toDo);
             console.log(toDo.isComplete);
         }

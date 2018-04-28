@@ -18,35 +18,34 @@ Here are the specific components for the challenge:
 [x] create button to delete
 [x] create button to save modifications
 [x] assign ng-repeat="toDo in vm.toDo"
-* [ ] When the task is created, it should be stored inside of a database (MongoDB)
+* [x] When the task is created, it should be stored inside of a database (MongoDB)
 CLIENT.JS
-[ ] getFunction is $http GET
-[ ] postFunction is $http POST
+[x] getFunction is $http GET
+[x] postFunction is $http POST
 SERVER.JS
-[ ] create server.js and get it listening
-[ ] set up
-[ ] create toDo.router.js route
-[ ] create database-connection.js module
-[ ] write connection to the mongo-server in server.js
-[ ] create module for toDo-data.js
-[ ] create model for toDo-schema
+[x] create server.js and get it listening
+[x] set up
+[x] create toDo.router.js route
+[x] create database-connection.js module
+[x] write connection to the mongo-server in server.js
+[x] create module for toDo-data.js
+[x] create model for toDo-schema
 const toDoSchema = new Schema ({
-    toDoText: { type: String, required: true },
-    isComplete: { type: Boolean }
+
 })
-* [ ] Whenever a task is created the front end should refresh to show all tasks that need to be completed.
+* [x] Whenever a task is created the front end should refresh to show all tasks that need to be completed.
 CLIENT.JS
-[ ] postFunction includes: getFunction
-* [ ] Each task should have an option to 'Complete' or 'Delete'.
+[x] postFunction includes: getFunction
+* [x] Each task should have an option to 'Complete' or 'Delete'.
 CLIENT.JS
-[ ] editFunction includes: $http PUT, getFunction
-[ ] deleteFunction includes: $http DELETE, getFunction
+[x] editFunction includes: $http PUT, getFunction
+[x] deleteFunction includes: $http DELETE, getFunction
 * [ ] When a task is complete, its visual representation should change on the front end (for example, the background of the task container could change from gray to green, as well as the complete option 'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete. `ng-class` will come in handy!)
 INDEX.HTML
 [ ] link bootstrap
 [ ] assign classes to elements
 * [see schema code] Whether or not a task is complete should also be stored in the database.
-* [ ] Deleting a task should remove it both from the Front End as well as the Database.
+* [x] Deleting a task should remove it both from the Front End as well as the Database.
 
 Make sure that you also show us your best styling chops.
 
@@ -56,7 +55,8 @@ We would recommend you spend some time thinking about how to approach this probl
 
 - Implement Bootstrap to make your app look FABULOUS.
 - In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task. Once again, you can interrupt this however you would like.
-- Move the inputs into a form and use `ng-submit` so that the user can hit enter to add a new task.
+[x] Move the inputs into a form and use `ng-submit` so that the user can hit enter to add a new task.
 - Add front-end validation to the 'make-a-task' form.
-- Add a `category` field for the task. Allow users to filter by task category. 
+[x] Add a `category` field for the task. 
+[x]Allow users to filter by task category. 
 - Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.

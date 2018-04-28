@@ -13,16 +13,23 @@
 
 <body ng-app="ToDoApp" ng-controller="ToDoController as vm">
     <h1>Add a ToDo</h1>
-    <input ng-model="vm.newToDo.toDoText" placeholder="new todo text">
-    <button ng-click="vm.createToDo(newToDo)">Create new</button>
+    <form action="">
+        <input ng-model="vm.newToDo.toDoText" placeholder="new todo text">
+        <input ng-model="vm.newToDo.category" placeholder="category">
+        <button ng-click="vm.createToDo(newToDo)">Create new</button>
+    </form>
     <h2>ToDo List</h2>
-    <section ng-repeat="toDo in vm.toDoList">
-        <label for=""></label>
+    <p>Filter list by category: </p>
+    <input type="text" ng-model="searchBar" placeholder="Filter by category">
+    <p>ToDo List:</p>
+    <section ng-repeat="toDo in vm.toDoList | filter:{category: searchBar}">
         <input ng-model="toDo.toDoText">
+        <input ng-model="toDo.category">
         <input disabled="disabled" ng-model="toDo.isComplete">
         <button ng-click="vm.updateText(toDo)">update text</button>
         <button ng-click="vm.toggleComplete(toDo)">toggle complete</button>
         <button ng-click="vm.delete(toDo)">delete</button>
     </section>
 </body>
+
 </html>
