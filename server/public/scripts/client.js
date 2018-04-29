@@ -74,6 +74,7 @@ app.controller('ToDoController', ['$http', function ($http) {
         }
         else if (toDo.isComplete === true) {
             toDo.isComplete = false;
+            self.isReadOnly = true;
             putRequest(toDo);
             console.log(toDo.isComplete);
         }

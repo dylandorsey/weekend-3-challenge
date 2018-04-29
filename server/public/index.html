@@ -25,8 +25,8 @@
             <form action="">
                 <h2>Add a task</h2>
                 <div class="input-group">
-                    <input required ng-model="vm.newToDo.toDoText" placeholder="new todo text">
-                    <input required ng-model="vm.newToDo.category" placeholder="category">
+                    <input class="form-control" required ng-model="vm.newToDo.toDoText" placeholder="new todo text">
+                    <input class="form-control-quarter" required ng-model="vm.newToDo.category" placeholder="category">
                     <button class="btn btn-secondary" ng-click="vm.createToDo(newToDo)">Create new</button>
                 </div>
             </form>
@@ -36,16 +36,15 @@
             <div>
                 <input type="text" ng-model="searchBar" placeholder="Search list by category">
             </div>
-            <div class="container cotainer-secondary">
-                <p>Task List:</p>
+            <div class="container-secondary">
                 <div class="input-group" ng-repeat="toDo in vm.toDoList | filter:{category: searchBar} | orderBy:'isComplete'">
-                    <input type="text" class="form-control" ng-class="{'form-control completed': toDo.isComplete == true}" ng-disabled="completed" required="required"
-                        ng-model="toDo.toDoText">
-                    <input type="text" class="form-control-quarter" ng-class="{'form-control-quarter completed': toDo.isComplete == true}" required="required"
+                    <input type="text" class="form-control" ng-class="{'form-control completed': toDo.isComplete == true}"
+                        ng-model="toDo.toDoText" [readonly]="{toDo.isComplete == true}">
+                    <input type="text" class="form-control-quarter" ng-class="{'form-control-quarter completed': toDo.isComplete == true}"
                         ng-model="toDo.category">
                     <button class="btn btn-secondary" type="button" ng-click="vm.updateText(toDo)">update</button>
                     <button class="btn btn-secondary" type="button" ng-click="vm.toggleComplete(toDo)">toggle complete</button>
-                    <button class="btn btn-secondary" type="button" ng-click="vm.delete(toDo)" ng-model"completed">delete</button>
+                    <button class="btn btn-secondary" type="button" ng-click="vm.delete(toDo)">delete</button>
                 </div>
             </div>
         </div>

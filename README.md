@@ -40,10 +40,10 @@ CLIENT.JS
 CLIENT.JS
 [x] editFunction includes: $http PUT, getFunction
 [x] deleteFunction includes: $http DELETE, getFunction
-* [ ] When a task is complete, its visual representation should change on the front end (for example, the background of the task container could change from gray to green, as well as the complete option 'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete. `ng-class` will come in handy!)
+* [x] When a task is complete, its visual representation should change on the front end (for example, the background of the task container could change from gray to green, as well as the complete option 'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete. `ng-class` will come in handy!)
 INDEX.HTML
-[ ] link bootstrap
-[ ] assign classes to elements
+[x] link bootstrap
+[x] assign classes to elements
 * [see schema code] Whether or not a task is complete should also be stored in the database.
 * [x] Deleting a task should remove it both from the Front End as well as the Database.
 
