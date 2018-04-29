@@ -5,30 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mean Todo</title>
+    <title>MEAN Tasks</title>
     <script src="vendors/angular.js"></script>
+    <script src="vendors/jquery-3.3.1.js"></script>
+    <script src="vendors/bootstrap.js"></script>
     <script src="scripts/client.js"></script>
-</head>
-<h1>Mean Todo >:D</h1>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="vendors/bootstrap.css">
 
-<body ng-app="ToDoApp" ng-controller="ToDoController as vm">
-    <h1>Add a ToDo</h1>
-    <form action="">
-        <input ng-model="vm.newToDo.toDoText" placeholder="new todo text">
-        <input ng-model="vm.newToDo.category" placeholder="category">
-        <button ng-click="vm.createToDo(newToDo)">Create new</button>
-    </form>
-    <h2>ToDo List</h2>
-    <p>Filter list by category: </p>
-    <input type="text" ng-model="searchBar" placeholder="Filter by category">
-    <p>ToDo List:</p>
-    <section ng-repeat="toDo in vm.toDoList | filter:{category: searchBar} | orderBy:'isComplete'">
-        <input ng-model="toDo.toDoText">
-        <input ng-model="toDo.category">
-        <input disabled="disabled" ng-model="toDo.isComplete">
-        <button ng-click="vm.updateText(toDo)">update text</button>
-        <button ng-click="vm.toggleComplete(toDo)">toggle complete</button>
-        <button ng-click="vm.delete(toDo)">delete</button>
+</head>
+
+<body>
+    <section class="field " ng-app="ToDoApp" ng-controller="ToDoController as vm">
+        <header class="jumbotron-fluid">
+            <h1>MEAN Task List</h1>
+            <p>It's a simple application for managing a list of tasks.</p>
+        </header>
+        <div class="container">
+            <form action="">
+                <h2>Add a task</h2>
+                <div class="input-group">
+                    <input required ng-model="vm.newToDo.toDoText" placeholder="new todo text">
+                    <input required ng-model="vm.newToDo.category" placeholder="category">
+                    <button class="btn btn-secondary" ng-click="vm.createToDo(newToDo)">Create new</button>
+                </div>
+            </form>
+        </div>
+        <div class="container">
+            <h2>Task list</h2>
+            <div>
+                <input type="text" ng-model="searchBar" placeholder="Search list by category">
+            </div>
+            <div class="container cotainer-secondary">
+                <p>Task List:</p>
+                <div class="input-group" ng-repeat="toDo in vm.toDoList | filter:{category: searchBar} | orderBy:'isComplete'">
+                    <input type="text" class="form-control" ng-class="{'form-control completed': toDo.isComplete == true}" ng-disabled="completed" required="required"
+                        ng-model="toDo.toDoText">
+                    <input type="text" class="form-control-quarter" ng-class="{'form-control-quarter completed': toDo.isComplete == true}" required="required"
+                        ng-model="toDo.category">
+                    <button class="btn btn-secondary" type="button" ng-click="vm.updateText(toDo)">update</button>
+                    <button class="btn btn-secondary" type="button" ng-click="vm.toggleComplete(toDo)">toggle complete</button>
+                    <button class="btn btn-secondary" type="button" ng-click="vm.delete(toDo)" ng-model"completed">delete</button>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 

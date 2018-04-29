@@ -1,4 +1,5 @@
 console.log('in client.js');
+// ['ui.bootstrap']
 
 var app = angular.module('ToDoApp', []);
 
@@ -6,6 +7,8 @@ app.controller('ToDoController', ['$http', function ($http) {
     console.log('ToDoController loaded');
 
     var self = this;
+
+    self.taskItem = {}
 
     self.newToDo = getToDos();
 

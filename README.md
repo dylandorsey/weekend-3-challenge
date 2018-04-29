@@ -56,7 +56,7 @@ We would recommend you spend some time thinking about how to approach this probl
 - Implement Bootstrap to make your app look FABULOUS.
 - In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task. Once again, you can interrupt this however you would like.
 [x] Move the inputs into a form and use `ng-submit` so that the user can hit enter to add a new task.
-- Add front-end validation to the 'make-a-task' form.
+[x] Add front-end validation to the 'make-a-task' form.
 [x] Add a `category` field for the task. 
 [x]Allow users to filter by task category. 
 [x] Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
